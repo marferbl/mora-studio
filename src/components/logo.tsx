@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { Asterisk } from "./icons";
 
 export function Logo() {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       aria-label="Mora Studio, inicio"
       className="relative flex shrink-0 items-start gap-[7px] pb-[6px] text-ink"
     >
@@ -14,6 +15,6 @@ export function Logo() {
       <span className="absolute bottom-0 left-[2px] font-display text-[8px] leading-[6px] tracking-[1.5px]">
         STUDIO
       </span>
-    </a>
+    </Link>
   );
 }

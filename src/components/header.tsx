@@ -1,11 +1,12 @@
+import Link from "next/link";
 import { CONTACT_HREF } from "@/lib/site";
 import { ArrowUpRight } from "./icons";
 import { Logo } from "./logo";
 
 const links = [
-  { href: "#estudio", label: "El estudio" },
-  { href: "#soluciones", label: "Soluciones" },
-  { href: "#tarifas", label: "Tarifas" },
+  { href: "/#estudio", label: "El estudio" },
+  { href: "/#soluciones", label: "Soluciones" },
+  { href: "/#tarifas", label: "Tarifas" },
 ];
 
 export function Header() {
@@ -14,22 +15,22 @@ export function Header() {
       <Logo />
       <nav aria-label="Principal" className="hidden gap-[35px] text-sm md:flex">
         {links.map((link) => (
-          <a
+          <Link
             key={link.href}
             href={link.href}
             className="transition-colors hover:text-violet"
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </nav>
-      <a
+      <Link
         href={CONTACT_HREF}
         className="flex items-center gap-[30px] border-b border-ink pb-[12.5px] pt-[11.5px] text-sm transition-colors hover:border-violet hover:text-violet"
       >
         Hablemos
         <ArrowUpRight className="size-[10px]" />
-      </a>
+      </Link>
     </header>
   );
 }

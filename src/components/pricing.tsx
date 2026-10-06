@@ -1,8 +1,9 @@
-import { CONTACT_HREF } from "@/lib/site";
+import { CONTACT_HREF, type PlanValue } from "@/lib/site";
 import { ButtonLink } from "./button-link";
 import { Check } from "./icons";
 
 type Plan = {
+  id: PlanValue;
   tag: string;
   name: string;
   price: string;
@@ -16,6 +17,7 @@ type Plan = {
 
 const plans: Plan[] = [
   {
+    id: "web-esencial",
     tag: "Para empezar",
     name: "Web Esencial",
     price: "790",
@@ -33,6 +35,7 @@ const plans: Plan[] = [
     cta: "Este es mi plan",
   },
   {
+    id: "web-negocio",
     tag: "Recomendado",
     name: "Web Negocio",
     price: "1.490",
@@ -51,6 +54,7 @@ const plans: Plan[] = [
     featured: true,
   },
   {
+    id: "a-medida",
     tag: "Para ir más allá",
     name: "A medida",
     price: "Hablemos.",
@@ -135,7 +139,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
         ))}
       </ul>
       <ButtonLink
-        href={CONTACT_HREF}
+        href={`${CONTACT_HREF}?plan=${plan.id}`}
         variant={plan.featured ? "solid" : "outline"}
         className="mt-auto w-full"
       >
