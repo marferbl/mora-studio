@@ -12,20 +12,23 @@ const solutions = [
     connector: "a",
     accent: "elegirte.",
     body: "Un diseño web que explique tus servicios con claridad y haga sencillo el siguiente paso: consultar, reservar o comprar. Cuidamos la experiencia móvil y la estructura básica para buscadores.",
+    cta: "Contacta con nosotros",
   },
   {
     label: "Una app que acompaña",
-    lead: "De visitarte",
-    connector: "a",
-    accent: "volver.",
-    body: "Una app pensada para quienes ya te conocen: reservar, consultar o repetir en un par de toques. Diseñamos solo las funciones que tus clientes van a usar de verdad.",
+    lead: "Una relación",
+    connector: "que",
+    accent: "continúa.",
+    body: "Si tus clientes vuelven a menudo o necesitan gestionar citas, pedidos o servicios, estudiamos si una app puede ayudar. Definimos sus funciones, el formato y el presupuesto a partir del uso real que tendrá.",
+    cta: "Explorar una app para mi negocio",
   },
   {
     label: "Menos tareas, más negocio",
-    lead: "De repetir tareas",
-    connector: "a",
-    accent: "avanzar.",
-    body: "Herramientas a medida e integraciones que ordenan tu día a día: menos pasos manuales, menos errores y más tiempo para lo que verdaderamente importa.",
+    lead: "Lo repetitivo,",
+    connector: "más",
+    accent: "simple.",
+    body: "Revisamos cómo recibes consultas, gestionas reservas y organizas tu trabajo. Detectamos qué procesos conviene simplificar y qué herramientas o integraciones pueden ahorrarte pasos.",
+    cta: "Estudiar mis necesidades",
   },
 ];
 
@@ -132,7 +135,7 @@ export function Solutions() {
             {current.body}
           </p>
           <ButtonLink href={CONTACT_HREF} className="font-display">
-            Contacta con nosotros
+            {current.cta}
           </ButtonLink>
         </div>
       </div>
