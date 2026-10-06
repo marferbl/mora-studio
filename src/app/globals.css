@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: #f6f5f1;
+  --color-ink: #21172c;
+  --color-violet: #7137e8;
+  --color-lilac: #e0d2f5;
+  --color-mist: #ebe7f2;
+  --color-line: #d8d4dc;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  /* Nohemi is the design typeface; Outfit stands in until its files are added. */
+  --font-display: "Nohemi", var(--font-outfit), system-ui, sans-serif;
+  --font-grotesk: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Latin Modern Mono Prop", var(--font-geist-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 72px);
+}
+
+@layer components {
+  .display-heading {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(2.5rem, 5vw, 72px);
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+  }
+
+  .display-heading strong {
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1;
+    color: var(--color-violet);
+  }
+}
+
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    transform-origin: left;
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.panel-enter {
+  animation: panel-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .panel-enter {
+    animation: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
 }
