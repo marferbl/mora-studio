@@ -37,7 +37,7 @@ export function Work() {
         </p>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article key={project.title}>
             <div
               className="relative aspect-[636/498] overflow-clip rounded"
@@ -51,6 +51,7 @@ export function Work() {
                   height={project.height}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="pan-image h-auto w-full max-w-none"
+                  style={{ animationDelay: `${index}s` }}
                 />
               </div>
             </div>

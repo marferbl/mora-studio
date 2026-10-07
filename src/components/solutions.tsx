@@ -105,7 +105,7 @@ export function Solutions() {
         role="tabpanel"
         id="solucion-panel"
         aria-labelledby={`solucion-tab-${active}`}
-        className="mt-[42px] grid items-center gap-10 md:min-h-[400px] md:grid-cols-[49fr_51fr] md:gap-0"
+        className="mt-[42px] grid items-center gap-10 overflow-x-clip md:-ml-16 md:min-h-[400px] md:grid-cols-[49fr_51fr] md:gap-0 md:pl-16"
       >
         <div
           aria-hidden="true"
@@ -117,7 +117,7 @@ export function Solutions() {
         />
         <div
           key={`content-${active}`}
-          className="panel-enter flex flex-col items-start gap-[25px] [animation-delay:80ms]"
+          className="slide-in-right flex flex-col items-start gap-[25px]"
         >
           <h3 className="font-display text-[clamp(2rem,3.2vw,45px)] font-light leading-[1.14] tracking-[-0.03em]">
             {current.lead}
