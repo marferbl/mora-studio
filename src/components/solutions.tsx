@@ -8,19 +8,19 @@ import { ArrowUpRight } from "./icons";
 const solutions = [
   {
     label: "Una web que conecta",
-    lead: "De descubrirte",
-    connector: "a",
-    accent: "elegirte.",
+    lead: "Que te encuentren,",
+    connector: "que te",
+    accent: "elijan.",
     body: "Un diseño web que explique tus servicios con claridad y haga sencillo el siguiente paso: consultar, reservar o comprar. Cuidamos la experiencia móvil y la estructura básica para buscadores.",
     cta: "Contacta con nosotros",
   },
   {
     label: "Una app que acompaña",
-    lead: "Una relación",
-    connector: "que",
-    accent: "continúa.",
-    body: "Si tus clientes vuelven a menudo o necesitan gestionar citas, pedidos o servicios, estudiamos si una app puede ayudar. Definimos sus funciones, el formato y el presupuesto a partir del uso real que tendrá.",
-    cta: "Explorar una app para mi negocio",
+    lead: "Ahorra tiempo sin",
+    connector: "perder",
+    accent: "resultados.",
+    body: "Si tus clientes son recurrentes o necesitan gestionar citas, pedidos o servicios, estudiamos si una app puede ayudarte. Definimos sus funciones, el formato y el presupuesto a partir del uso real que tendrá.",
+    cta: "Contacta con nosotros",
   },
   {
     label: "Menos tareas, más negocio",
@@ -36,7 +36,6 @@ export function Solutions() {
   const [active, setActive] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = solutions[active];
-  const number = String(active + 1).padStart(2, "0");
 
   function onKeyDown(event: React.KeyboardEvent) {
     const step =
@@ -54,9 +53,9 @@ export function Solutions() {
     >
       <div className="flex flex-col justify-between gap-6 pb-10 md:flex-row md:items-end">
         <h2 className="display-heading">
-          La tecnología cambia.
+          Soluciones digitales
           <br />
-          El objetivo es <strong>crecer.</strong>
+          para necesidades <strong>reales.</strong>
         </h2>
         <p className="max-w-[330px] py-[15px] text-[15px] leading-[22.5px] md:whitespace-nowrap">
           Más fácil para tus clientes.
@@ -108,17 +107,14 @@ export function Solutions() {
         aria-labelledby={`solucion-tab-${active}`}
         className="mt-[42px] grid items-center gap-10 md:min-h-[400px] md:grid-cols-[49fr_51fr] md:gap-0"
       >
-        <p
-          key={`number-${active}`}
+        <div
           aria-hidden="true"
-          className="panel-enter flex items-center gap-[30px] font-grotesk text-[clamp(110px,13vw,190px)] font-bold leading-none tracking-[-12px] text-[#d9cdee]"
-        >
-          {number}
-          <ArrowUpRight
-            className="size-[0.32em] text-violet"
-            strokeWidth={0.9}
-          />
-        </p>
+          className="pointer-events-none -ml-16 hidden h-[424px] max-w-[600px] blur-[10px] md:block"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 200px 230px at 69.6% 53%, rgba(113,55,232,0.24), rgba(113,55,232,0)), radial-gradient(ellipse 172px 228px at 31.7% 38%, rgba(239,191,168,0.42), rgba(239,191,168,0))",
+          }}
+        />
         <div
           key={`content-${active}`}
           className="panel-enter flex flex-col items-start gap-[25px] [animation-delay:80ms]"

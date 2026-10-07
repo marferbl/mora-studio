@@ -2,14 +2,18 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Bruma / Café de barrio",
-    image: "/images/proyecto-bruma.png",
-    alt: "Concepto de web para Bruma, un café de barrio",
-    background: "#e3d2bd",
+    title: "Bruma / Café de especialidad",
+    image: "/images/proyecto-bruma-completo.png",
+    width: 1230,
+    height: 1966,
+    alt: "Concepto de web para Bruma, un café de especialidad",
+    background: "#fac3ac",
   },
   {
     title: "Alma / Estudio de pilates",
     image: "/images/proyecto-alma.png",
+    width: 1024,
+    height: 1536,
     alt: "Concepto de web para Alma, un estudio de pilates",
     background: "#e2eadc",
   },
@@ -23,14 +27,13 @@ export function Work() {
     >
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <h2 className="display-heading">
-          Tu negocio es único.
+          Estrategias digitales
           <br />
-          Que se <strong>note.</strong>
+          a <strong>medida.</strong>
         </h2>
-        <p className="max-w-[330px] py-[15px] text-[15px] leading-[22.5px] text-[#8b8a8d] md:whitespace-nowrap">
-          Dos exploraciones de diseño.
-          <br />
-          Así podría verse tu siguiente paso.
+        <p className="max-w-[330px] py-[15px] text-[15px] leading-[22.5px]">
+          Explora cómo el diseño puede ayudar a presentar tus servicios y
+          facilitar que tus clientes den el siguiente paso.
         </p>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -40,13 +43,14 @@ export function Work() {
               className="relative aspect-[636/498] overflow-clip rounded"
               style={{ backgroundColor: project.background }}
             >
-              <div className="absolute inset-[10px] overflow-hidden">
+              <div className="pan-frame absolute inset-[10px] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.alt}
-                  fill
+                  width={project.width}
+                  height={project.height}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-top"
+                  className="pan-image h-auto w-full max-w-none"
                 />
               </div>
             </div>

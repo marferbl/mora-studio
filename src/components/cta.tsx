@@ -14,9 +14,9 @@ export function Cta() {
     >
       <div className="flex items-start justify-between gap-6">
         <h2 className="display-heading text-[clamp(2.5rem,6vw,86.4px)] leading-[1.08]">
-          Tú conoces tu negocio.
+          Más tiempo para ti,
           <br />
-          <strong>Hagámoslo crecer.</strong>
+          <strong>más éxito para tu negocio.</strong>
         </h2>
         <ArrowUpRight
           className="hidden size-[60px] shrink-0 md:block"
@@ -24,12 +24,13 @@ export function Cta() {
         />
       </div>
       <div className="mt-[44.4px] flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <p className="py-[17px] text-[17px] leading-[25.5px]">
-          Cuéntanos qué te gustaría mejorar.
-          <br />
-          Encontraremos contigo el siguiente paso digital.
+        <p className="max-w-[570px] py-[17px] text-[17px] leading-[25.5px]">
+          No hace falta que sepas por dónde empezar. Estudiamos juntos cómo la
+          digitalización puede ayudarte y definimos soluciones a medida.
         </p>
-        <ButtonLink href={CONTACT_HREF}>Prepara tu proyecto</ButtonLink>
+        <ButtonLink href={CONTACT_HREF} className="shrink-0">
+          ¿Charlamos?
+        </ButtonLink>
       </div>
     </section>
   );

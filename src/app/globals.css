@@ -94,7 +94,32 @@ body {
   }
 }
 
+/* Tall mockups scroll down inside their fixed frame, hold 3s at the bottom,
+   then restart from the top. */
+.pan-frame {
+  container-type: size;
+}
+
+.pan-image {
+  animation: pan-scroll 15s ease-in-out infinite;
+}
+
+@keyframes pan-scroll {
+  0%,
+  7% {
+    transform: translateY(0);
+  }
+  80%,
+  100% {
+    transform: translateY(calc(100cqh - 100%));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .pan-image {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }
