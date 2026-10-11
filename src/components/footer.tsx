@@ -7,7 +7,7 @@ export function Footer() {
       <p className="font-display font-light">
         Diseño con intención. Tecnología con cercanía.
       </p>
-      <p>© 2026 Mora Studio</p>
+      <p>© 2026 Berri Studio</p>
     </footer>
   );
 }

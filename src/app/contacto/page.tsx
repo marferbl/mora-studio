@@ -5,7 +5,7 @@ import { PLANS } from "@/lib/site";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
-  title: "Contacto — Mora Studio",
+  title: "Contacto — Berri Studio",
   description:
     "Cuéntanos qué te gustaría mejorar. Encontraremos contigo el siguiente paso digital.",
 };

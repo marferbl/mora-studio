@@ -27,11 +27,11 @@ export function Cta() {
         </p>
         <div className="mt-10 flex flex-wrap justify-between gap-x-10 gap-y-5 font-display text-base font-medium leading-[18px] tracking-[1px] lg:mt-auto">
           <a
-            href="mailto:morastudio@gmail.com"
+            href="mailto:berristudio@gmail.com"
             className="flex items-center gap-[15px] transition-colors hover:text-violet"
           >
             <Image src="/icons/email.svg" alt="" width={18} height={18} />
-            morastudio@gmail.com
+            berristudio@gmail.com
           </a>
           <a
             href="tel:+34685591340"

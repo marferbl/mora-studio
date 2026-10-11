@@ -4,7 +4,7 @@ import { PLANS } from "@/lib/site";
 import type { ContactField, ContactState } from "./form-state";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const DEFAULT_FROM = "Mora Studio <onboarding@resend.dev>";
+const DEFAULT_FROM = "Berri Studio <onboarding@resend.dev>";
 
 function field(formData: FormData, name: string) {
   const value = formData.get(name);

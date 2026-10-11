@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mora Studio — Diseño web y digitalización en Valencia",
+  title: "Berri Studio — Diseño web y digitalización en Valencia",
   description:
     "Llevamos tu negocio al mundo digital para que puedas vender más, trabajar mejor y dedicar tu tiempo a lo que verdaderamente importa.",
 };
