@@ -109,12 +109,17 @@ export function Solutions() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none -ml-16 hidden h-[424px] max-w-[600px] blur-[10px] md:block"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 200px 230px at 69.6% 53%, rgba(113,55,232,0.24), rgba(113,55,232,0)), radial-gradient(ellipse 172px 228px at 31.7% 38%, rgba(239,191,168,0.42), rgba(239,191,168,0))",
-          }}
-        />
+          className="pointer-events-none relative -ml-16 hidden h-[424px] max-w-[600px] blur-[10px] md:block"
+        >
+          {/* Quarter turn per tab: violet sits right, then bottom, then left. */}
+          <div
+            className="absolute left-1/2 top-1/2 size-[600px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-[1400ms] ease-in-out motion-reduce:transition-none"
+            style={{ transform: `rotate(${active * 90}deg)` }}
+          >
+            <div className="blob-float-a absolute left-[218px] top-[83px] h-[460px] w-[400px] bg-[radial-gradient(closest-side,rgba(113,55,232,0.24),rgba(113,55,232,0))]" />
+            <div className="blob-float-b absolute left-[18px] top-[21px] h-[456px] w-[344px] bg-[radial-gradient(closest-side,rgba(239,191,168,0.42),rgba(239,191,168,0))]" />
+          </div>
+        </div>
         <div
           key={`content-${active}`}
           className="slide-in-right flex flex-col items-start gap-[25px]"

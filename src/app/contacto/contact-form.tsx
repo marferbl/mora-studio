@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useActionState } from "react";
 import { ArrowUpRight, Check } from "@/components/icons";
 import { PLANS } from "@/lib/site";
@@ -9,6 +10,13 @@ import { initialContactState, type ContactField } from "./form-state";
 const labelClass = "text-[10px] uppercase tracking-[1.5px] text-[#5d516b]";
 const inputClass =
   "mt-2 w-full border-b border-ink/25 bg-transparent pb-3 pt-1 text-[17px] leading-[27px] outline-none transition-colors placeholder:text-ink/35 focus:border-violet aria-[invalid=true]:border-[#b3261e]";
+
+// Preselects the plan from a `?plan=` query param. Needs a Suspense boundary.
+export function ContactFormWithPlanParam() {
+  const plan = useSearchParams().get("plan");
+  const defaultPlan = PLANS.find((option) => option.value === plan)?.value;
+  return <ContactForm key={defaultPlan} defaultPlan={defaultPlan} />;
+}
 
 export function ContactForm({ defaultPlan }: { defaultPlan?: string }) {
   const [state, formAction, pending] = useActionState(
@@ -144,7 +152,7 @@ export function ContactForm({ defaultPlan }: { defaultPlan?: string }) {
         <button
           type="submit"
           disabled={pending}
-          className="inline-flex cursor-pointer items-center justify-between gap-[30px] rounded-full border border-ink bg-ink px-6 py-[18px] font-display text-sm leading-[18px] text-cream transition-colors hover:border-violet hover:bg-violet disabled:cursor-wait disabled:opacity-60"
+          className="inline-flex shrink-0 cursor-pointer items-center justify-between gap-[30px] whitespace-nowrap rounded-full border border-ink bg-ink px-6 py-[18px] font-display text-base leading-[18px] text-cream transition-colors hover:border-violet hover:bg-violet disabled:cursor-wait disabled:opacity-60"
         >
           {pending ? "Enviando…" : "Enviar mensaje"}
           <ArrowUpRight className="size-[10px] shrink-0" />

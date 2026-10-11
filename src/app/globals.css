@@ -113,6 +113,29 @@ body {
   }
 }
 
+/* Gentle drift for the gradient blobs in the solutions panel. */
+.blob-float-a {
+  animation: blob-float-a 7s ease-in-out infinite;
+}
+
+.blob-float-b {
+  animation: blob-float-b 9s ease-in-out infinite;
+}
+
+@keyframes blob-float-a {
+  50% {
+    translate: 8px -12px;
+    scale: 1.04;
+  }
+}
+
+@keyframes blob-float-b {
+  50% {
+    translate: -10px 10px;
+    scale: 0.97;
+  }
+}
+
 /* Tall mockups scroll down inside their fixed frame and restart from the top
    as soon as they reach the bottom. */
 .pan-frame {
@@ -138,6 +161,11 @@ body {
   }
 
   .slide-in-right {
+    animation: none;
+  }
+
+  .blob-float-a,
+  .blob-float-b {
     animation: none;
   }
 

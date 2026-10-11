@@ -1,4 +1,4 @@
-import { CONTACT_HREF, type PlanValue } from "@/lib/site";
+import type { PlanValue } from "@/lib/site";
 import { ButtonLink } from "./button-link";
 import { Check } from "./icons";
 
@@ -20,7 +20,7 @@ const plans: Plan[] = [
     id: "web-esencial",
     tag: "Para empezar",
     name: "Web Esencial",
-    price: "790",
+    price: "590",
     currency: "€",
     note: "+ IVA · pago único",
     description: "Para que sepan qué haces y cómo contactar contigo.",
@@ -139,7 +139,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
         ))}
       </ul>
       <ButtonLink
-        href={`${CONTACT_HREF}?plan=${plan.id}`}
+        href={`/?plan=${plan.id}#contacto`}
         variant={plan.featured ? "solid" : "outline"}
         className="mt-auto w-full"
       >

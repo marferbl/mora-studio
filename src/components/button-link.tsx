@@ -22,7 +22,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-between gap-[30px] rounded-full border border-ink px-6 py-[18px] text-sm leading-[18px] transition-colors ${variants[variant]} ${className}`}
+      className={`inline-flex items-center justify-between gap-[30px] rounded-full border border-ink px-6 py-[18px] text-base leading-[18px] transition-colors ${variants[variant]} ${className}`}
     >
       {children}
       <ArrowUpRight className="size-[10px] shrink-0" />

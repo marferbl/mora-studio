@@ -1,5 +1,5 @@
-// Every "contact" call to action points here.
-export const CONTACT_HREF = "/contacto";
+// Every "contact" call to action scrolls to the contact form on the landing.
+export const CONTACT_HREF = "/#contacto";
 
 export const PLANS = [
   { value: "web-esencial", label: "Web Esencial" },
